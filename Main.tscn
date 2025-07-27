@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cldmhl7d7iahd"]
 
 [ext_resource type="PackedScene" uid="uid://25lf3eebdfcp" path="res://Player/Player.tscn" id="1_nl1s6"]
-[ext_resource type="PackedScene" uid="uid://btutunpb387f" path="res://Buildings/BasicBuilding.tscn" id="2_u74ux"]
-[ext_resource type="PackedScene" uid="uid://7uykrhluflj7" path="res://Buildings/Ground.tscn" id="3_4pc7l"]
+[ext_resource type="PackedScene" uid="uid://btutunpb387f" path="res://Structures/BasicBuilding.tscn" id="2_u74ux"]
+[ext_resource type="PackedScene" uid="uid://7uykrhluflj7" path="res://Structures/Ground.tscn" id="3_4pc7l"]
 
 [sub_resource type="Environment" id="Environment_ojyl3"]
 background_mode = 1
