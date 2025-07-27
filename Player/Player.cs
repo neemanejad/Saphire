@@ -7,7 +7,10 @@ public partial class Player : CharacterBody3D
 	private float pitch { get; set; } = 0.0f;
 	private float yaw { get; set; } = 0.0f;
 	private float mouseSensitivity = 0.005f;
-	private float movementSpeed = 10.0f;
+	private float movementSpeed = 1000.0f;
+	private Vector3 gravityVector = new Vector3(0, -19.6f, 0);
+	private Vector3 jumpVector = new Vector3(0, 10, 0);
+	private Vector3 verticalVelocityVector = new Vector3(0, 0, 0);
 
     private float PITCH_YAW_BUFFER_CONSTANT = 0.005f;
 
@@ -26,6 +29,11 @@ public partial class Player : CharacterBody3D
 	{
         ProcessKeyboardInput(delta);
 	}
+
+    public override void _PhysicsProcess(double delta)
+    {
+		//HandleMovement(delta);
+    }
 
     public override void _Input(InputEvent @event)
     {
@@ -58,13 +66,13 @@ public partial class Player : CharacterBody3D
             }
 		}
 
-        HandleMovement(delta);
+		HandleMovement(delta);
 	}
 
 	private void HandleMovement(double delta)
 	{
         var cameraDirection = camera.GlobalTransform.Basis.Z.Normalized();
-        var movementDirection = new Vector3();
+        var movementDirection = new Vector3(0, 0, 0);
         if (Input.IsActionPressed("move_forward"))
         {
             movementDirection += new Vector3(-cameraDirection.X, 0, -cameraDirection.Z);
@@ -82,6 +90,20 @@ public partial class Player : CharacterBody3D
             movementDirection += new Vector3(cameraDirection.Z, 0, -cameraDirection.X);
         }
 
-        GlobalPosition += movementDirection.Normalized() * (float)delta * movementSpeed * (Input.IsActionPressed("sprint") ? 2.0f : 1.0f);
+        Velocity = movementDirection.Normalized() * (float)delta * movementSpeed * (Input.IsActionPressed("sprint") ? 2.0f : 1.0f);
+		
+		verticalVelocityVector += gravityVector * (float)delta;
+        if (IsOnFloor())
+        {
+            verticalVelocityVector = Vector3.Zero;
+        }
+        if (IsOnFloor() && Input.IsActionJustPressed("jump"))
+		{
+            verticalVelocityVector += jumpVector;
+		}
+
+		Velocity += verticalVelocityVector;
+
+		MoveAndSlide();
     }
 }
