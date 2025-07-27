@@ -7,7 +7,7 @@ public partial class Player : CharacterBody3D
 	private float pitch { get; set; } = 0.0f;
 	private float yaw { get; set; } = 0.0f;
 	private float mouseSensitivity = 0.005f;
-	private float movementSpeed = 20.0f;
+	private float movementSpeed = 10.0f;
 
     private float PITCH_YAW_BUFFER_CONSTANT = 0.005f;
 
@@ -82,6 +82,6 @@ public partial class Player : CharacterBody3D
             movementDirection += new Vector3(cameraDirection.Z, 0, -cameraDirection.X);
         }
 
-        GlobalPosition += movementDirection.Normalized() * (float)delta * movementSpeed * (Input.IsActionPressed("sprint") ? 1.2f : 1.0f);
+        GlobalPosition += movementDirection.Normalized() * (float)delta * movementSpeed * (Input.IsActionPressed("sprint") ? 2.0f : 1.0f);
     }
 }
