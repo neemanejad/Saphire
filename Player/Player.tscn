@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://25lf3eebdfcp"]
+[gd_scene load_steps=5 format=3 uid="uid://25lf3eebdfcp"]
 
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_lq58y"]
+[ext_resource type="PackedScene" uid="uid://crwxesydhvdum" path="res://Menus/MenuManager.tscn" id="2_yo7lr"]
+[ext_resource type="PackedScene" uid="uid://b57vn6nmk042b" path="res://Menus/PauseMenu.tscn" id="3_k4es7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_alu86"]
 size = Vector3(1, 3.97113, 1)
@@ -18,3 +20,6 @@ near = 0.001
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1.19, 0, 0, 0, 1.19, 0, 0, 0, 1.19, 0, 1.76782, 0)
 shape = SubResource("BoxShape3D_alu86")
+
+[node name="MenuManager" parent="." instance=ExtResource("2_yo7lr")]
+PauseMenuScene = ExtResource("3_k4es7")

@@ -51,11 +51,6 @@ public partial class Player : CharacterBody3D
 
 	public void ProcessKeyboardInput(double delta)
 	{
-		if (Input.IsActionJustPressed("escape"))
-		{
-			Input.MouseMode = Input.MouseMode == Input.MouseModeEnum.Captured ? Input.MouseModeEnum.Visible : Input.MouseModeEnum.Captured;
-		}
-
 		if (Input.IsActionJustPressed("fullscreen"))
 		{
 			if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Maximized)
