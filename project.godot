@@ -21,6 +21,7 @@ project/assembly_name="Saphire"
 [global_group]
 
 Player=""
+Climbable=""
 
 [input]
 

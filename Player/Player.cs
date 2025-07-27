@@ -3,14 +3,15 @@ using System;
 
 public partial class Player : CharacterBody3D
 {
-	private Camera3D camera {  get; set; }
-	private float pitch { get; set; } = 0.0f;
-	private float yaw { get; set; } = 0.0f;
+	private Camera3D camera;
+	private float pitch = 0.0f;
+	private float yaw = 0.0f;
 	private float mouseSensitivity = 0.005f;
-	private float movementSpeed = 1000.0f;
+	private float movementSpeed = 1500.0f;
 	private Vector3 gravityVector = new Vector3(0, -19.6f, 0);
 	private Vector3 jumpVector = new Vector3(0, 10, 0);
 	private Vector3 verticalVelocityVector = new Vector3(0, 0, 0);
+	private Vector3 climbingVector = new Vector3(0, 10, 0);
 
     private float PITCH_YAW_BUFFER_CONSTANT = 0.005f;
 
@@ -66,7 +67,13 @@ public partial class Player : CharacterBody3D
             }
 		}
 
-		HandleMovement(delta);
+		{
+            Velocity = Vector3.Zero;
+            HandleMovement(delta);
+            HandleClimbing(delta);
+            MoveAndSlide();
+        }
+		
 	}
 
 	private void HandleMovement(double delta)
@@ -103,7 +110,41 @@ public partial class Player : CharacterBody3D
 		}
 
 		Velocity += verticalVelocityVector;
+    }
 
-		MoveAndSlide();
+	private void HandleClimbing(double delta)
+	{
+        for (int i = 0; i < GetSlideCollisionCount(); i++)
+        {
+			var collision = GetSlideCollision(i);
+			var body = collision.GetCollider();
+            if (((Node)body).IsInGroup("Climbable") && IsCollisionFromWall(collision) && IsMovingInDirectionOfCollision(collision))
+            {
+				DoClimb(delta);
+            }
+        }
+    }
+
+	private void DoClimb(double delta)
+	{
+		verticalVelocityVector.Y = (climbingVector * (float)delta).Y * 50;
+		Velocity += verticalVelocityVector;
+	}
+
+	private bool IsCollisionFromWall(KinematicCollision3D collision)
+	{
+		var normalVectorOfCollision = collision.GetNormal();
+		var playerNormalVector = GlobalTransform.Basis.Y;
+
+		return !playerNormalVector.Normalized().IsEqualApprox(normalVectorOfCollision.Normalized());
+	}
+
+	private bool IsMovingInDirectionOfCollision(KinematicCollision3D collision)
+	{
+        var normalVectorOfCollision = collision.GetNormal();
+		var xHorizontalVelocityVector = new Vector3(Velocity.X, 0, 0);
+		var zHorizontalVelocityVector = new Vector3(0, 0, Velocity.Z);
+        return xHorizontalVelocityVector.Normalized().Abs().IsEqualApprox(normalVectorOfCollision.Normalized().Abs()) 
+			|| zHorizontalVelocityVector.Normalized().Abs().IsEqualApprox(normalVectorOfCollision.Normalized().Abs());
     }
 }
