@@ -55,15 +55,18 @@ transform = Transform3D(26.941, 0, 0, 0, 77.955, 0, 0, 0, 26.941, 66.9706, 29.66
 transform = Transform3D(26.941, 0, 0, 0, 77.955, 0, 0, 0, 26.941, 30.3816, 29.6653, -79.4827)
 
 [node name="Ground" parent="." instance=ExtResource("3_4pc7l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.6583, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0057621, -24.6936, 0.0190296)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.380602, 0.720753, -0.448629, 0, 0.528438, 0.848972, 0.611463, -0.448629, 0.279247, 0, 24.4042, 0)
+transform = Transform3D(0.528438, 0.720753, -0.448629, 0.396303, 0.257908, 0.881151, 0.750798, -0.643427, -0.149348, 20.3621, 24.4042, 0)
 light_color = Color(0.997933, 0.889521, 0.814739, 1)
-light_energy = 5.571
-light_indirect_energy = 4.2
+light_energy = 7.995
+light_indirect_energy = 3.715
 light_angular_distance = 0.86
+light_bake_mode = 1
 shadow_enabled = true
+directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ojyl3")
