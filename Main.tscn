@@ -19,40 +19,40 @@ fog_light_energy = 4.17
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3757, 10.2336, 10.3229)
 
 [node name="BasicBuilding" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -4.18162)
+transform = Transform3D(20.103, 0, 0, 0, 58.17, 0, 0, 0, 20.103, 0, 18.4352, -4.18162)
 
 [node name="BasicBuilding2" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 36.589, 7.18183, -4.18162)
+transform = Transform3D(20.103, 0, 0, 0, 58.17, 0, 0, 0, 20.103, 36.589, 18.4352, -4.18162)
 
 [node name="BasicBuilding3" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, 21.9543)
+transform = Transform3D(20.103, 0, 0, 0, 58.17, 0, 0, 0, 20.103, 0, 18.4352, 21.9543)
 
 [node name="BasicBuilding4" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 33.948, 7.18183, 43.5566)
+transform = Transform3D(14.63, 0, 0, 0, 145.62, 0, 0, 0, 12.447, 33.948, 51.3546, 43.5566)
 
 [node name="BasicBuilding5" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 70.537, 7.18183, 43.5566)
+transform = Transform3D(14.63, 0, 0, 0, 145.62, 0, 0, 0, 12.447, 70.537, 51.3546, 43.5566)
 
 [node name="BasicBuilding6" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 33.948, 7.18183, 69.6925)
+transform = Transform3D(14.63, 0, 0, 0, 145.62, 0, 0, 0, 12.447, 33.948, 51.3546, 69.6925)
 
 [node name="BasicBuilding7" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -62.8658, 7.18183, -54.7867)
+transform = Transform3D(20.873, 0, 0, 0, 60.395, 0, 0, 0, 20.873, -62.8658, 20.5084, -54.7867)
 
 [node name="BasicBuilding8" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -26.2768, 7.18183, -54.7867)
+transform = Transform3D(20.873, 0, 0, 0, 60.395, 0, 0, 0, 20.873, -26.2768, 20.5084, -54.7867)
 
 [node name="BasicBuilding9" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -62.8658, 7.18183, -28.6508)
+transform = Transform3D(20.873, 0, 0, 0, 60.395, 0, 0, 0, 20.873, -62.8658, 20.5084, -28.6508)
 
 [node name="BasicBuilding10" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -105.619)
+transform = Transform3D(26.941, 0, 0, 0, 77.955, 0, 0, 0, 26.941, 30.3816, 29.6653, -105.619)
 
 [node name="BasicBuilding11" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 36.589, 7.18183, -105.619)
+transform = Transform3D(26.941, 0, 0, 0, 77.955, 0, 0, 0, 26.941, 66.9706, 29.6653, -105.619)
 
 [node name="BasicBuilding12" parent="." instance=ExtResource("2_u74ux")]
-transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -79.4827)
+transform = Transform3D(26.941, 0, 0, 0, 77.955, 0, 0, 0, 26.941, 30.3816, 29.6653, -79.4827)
 
 [node name="Ground" parent="." instance=ExtResource("3_4pc7l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.6583, 0)
