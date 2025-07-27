@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=3 uid="uid://cldmhl7d7iahd"]
+
+[ext_resource type="PackedScene" uid="uid://25lf3eebdfcp" path="res://Player/Player.tscn" id="1_nl1s6"]
+[ext_resource type="PackedScene" uid="uid://btutunpb387f" path="res://Buildings/BasicBuilding.tscn" id="2_u74ux"]
+[ext_resource type="PackedScene" uid="uid://7uykrhluflj7" path="res://Buildings/Ground.tscn" id="3_4pc7l"]
+
+[sub_resource type="Environment" id="Environment_ojyl3"]
+background_mode = 1
+background_color = Color(0.761397, 0.841342, 1, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.652782, 0.767109, 0.997883, 1)
+ambient_light_sky_contribution = 0.95
+ambient_light_energy = 7.36
+fog_light_energy = 4.17
+
+[node name="Main" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_nl1s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.3757, 0.931774, 10.3229)
+
+[node name="BasicBuilding" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -4.18162)
+
+[node name="BasicBuilding2" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 36.589, 7.18183, -4.18162)
+
+[node name="BasicBuilding3" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, 21.9543)
+
+[node name="BasicBuilding4" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 33.948, 7.18183, 43.5566)
+
+[node name="BasicBuilding5" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 70.537, 7.18183, 43.5566)
+
+[node name="BasicBuilding6" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 33.948, 7.18183, 69.6925)
+
+[node name="BasicBuilding7" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -62.8658, 7.18183, -54.7867)
+
+[node name="BasicBuilding8" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -26.2768, 7.18183, -54.7867)
+
+[node name="BasicBuilding9" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, -62.8658, 7.18183, -28.6508)
+
+[node name="BasicBuilding10" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -105.619)
+
+[node name="BasicBuilding11" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 36.589, 7.18183, -105.619)
+
+[node name="BasicBuilding12" parent="." instance=ExtResource("2_u74ux")]
+transform = Transform3D(7.014, 0, 0, 0, 20.295, 0, 0, 0, 7.014, 0, 7.18183, -79.4827)
+
+[node name="Ground" parent="." instance=ExtResource("3_4pc7l")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.380602, 0.720753, -0.448629, 0, 0.528438, 0.848972, 0.611463, -0.448629, 0.279247, 0, 24.4042, 0)
+light_color = Color(0.997933, 0.889521, 0.814739, 1)
+light_energy = 5.571
+light_indirect_energy = 4.2
+light_angular_distance = 0.86
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ojyl3")

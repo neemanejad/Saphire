@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://7uykrhluflj7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_plokv"]
+albedo_color = Color(0.398211, 0, 0.100996, 1)
+metallic = 1.0
+metallic_specular = 0.44
+roughness = 0.53
+
+[sub_resource type="BoxMesh" id="BoxMesh_51gai"]
+material = SubResource("StandardMaterial3D_plokv")
+
+[node name="Ground" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(500, 0, 0, 0, 0.135, 0, 0, 0, 500, -0.00474167, 0, -0.00886536)
+mesh = SubResource("BoxMesh_51gai")
